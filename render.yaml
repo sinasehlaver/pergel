@@ -1,0 +1,25 @@
+# Render Blueprint (free static site). Render -> New -> Blueprint -> pick the
+# sinasehlaver/pergel GitHub repo. Static only: no backend, drawings stay in the
+# visitor's browser (files they save, sessionStorage, IndexedDB).
+services:
+  - type: web
+    name: pergel
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+    headers:
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: no-referrer
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN

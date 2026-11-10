@@ -72,6 +72,12 @@ arcs shared by two same-colour faces and re-walks the rest. `src/geom/doc.js` ho
 opened and stored files, and `exportSVG()`. Snapping (`snap.js`), hit testing (`hit.js`), paint drags (`paint.js`) and
 mirrors (`mirror.js`) are pure functions with their own tests. Rasterising and saving live in `src/export.js`.
 
+## Deploy
+
+`render.yaml` is a Render Blueprint for a free static site (`npm ci && npm run build`, publish `dist/`). In Render:
+New → Blueprint → pick this repo. There is no backend: drawings never reach the server. Visitors save `.pergel`
+files themselves; file save/autosave needs a Chromium browser.
+
 ## Vendored `look`
 
 `vendor/look/` is a copy of the shared UI package (design tokens, kit components, Settings → Appearance) that
