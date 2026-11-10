@@ -1,0 +1,21 @@
+.cp { display: flex; flex-direction: column; gap: var(--s3); padding: var(--s2); }
+.cp-sv, .cp-hue, .cp-alpha { position: relative; border-radius: var(--r-sm); cursor: crosshair; touch-action: none; outline: none; }
+.cp-sv { height: 140px; }
+.cp-hue, .cp-alpha { height: 14px; }
+.cp-sv-bg { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(to top, #000, transparent), linear-gradient(to right, #fff, var(--hue)); }
+.cp-hue { background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00); }
+.cp-alpha-bg { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(to right, transparent, var(--c)), repeating-conic-gradient(var(--border) 0 25%, var(--surface) 0 50%) 0 0 / 8px 8px; }
+.cp-sv:focus-visible, .cp-hue:focus-visible, .cp-alpha:focus-visible { box-shadow: var(--ring); }
+.cp-knob { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--text); pointer-events: none; background: var(--surface); }
+.cp-row { display: flex; gap: var(--s2); align-items: center; }
+.cp-cur { width: 26px; height: 26px; border-radius: var(--r-sm); box-shadow: 0 0 0 1px var(--border); flex: none; }
+.cp-hex { flex: 1; min-width: 0; } .cp-hex[aria-invalid="true"] { border-color: var(--danger); }
+.cp-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
+.cp-nums label { display: flex; flex-direction: column; font-size: 11px; color: var(--muted); gap: 2px; }
+.cp-nums input { width: 100%; padding: 4px 6px; }
+.cp-group h4 { margin: 0 0 var(--s1); font-size: 11px; font-weight: 500; color: var(--muted); }
+.cp-dots { display: flex; flex-wrap: wrap; gap: 6px; }
+.cp-dot { width: 22px; height: 22px; padding: 0; border: 2px solid var(--surface); border-radius: 50%; box-shadow: 0 0 0 1px var(--border); cursor: pointer; }
+.cp-dot:hover { transform: scale(1.1); } .cp-dot[aria-checked="true"] { box-shadow: 0 0 0 2px var(--text); }
+.cp-dot:focus-visible { box-shadow: var(--ring); }
+.recolour { display: flex; flex-direction: column; gap: var(--s2); margin-top: var(--s3); }

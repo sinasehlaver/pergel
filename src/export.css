@@ -1,0 +1,6 @@
+.export-dialog { min-width: min(30rem, 92vw); display: grid; gap: var(--s-3, 12px); }
+.export-dialog .exp-row { display: flex; align-items: center; gap: var(--s-3, 12px); flex-wrap: wrap; }
+.export-dialog .exp-label { width: 6rem; flex: none; color: var(--muted, inherit); }
+.export-dialog .exp-width { width: 6rem; }
+.export-dialog .exp-range { flex: 1; min-width: 6rem; accent-color: var(--accent); }
+.export-dialog .exp-err { color: var(--danger, var(--accent)); margin: 0; }
